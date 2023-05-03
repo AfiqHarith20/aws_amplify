@@ -4,6 +4,7 @@ import 'package:amplify_auth_cognito/amplify_auth_cognito.dart';
 import 'package:amplify_analytics_pinpoint/amplify_analytics_pinpoint.dart';
 
 import '../amplifyconfiguration.dart';
+import '../widget/login.dart';
 
 class EntryScreen extends StatefulWidget {
   const EntryScreen({Key? key}) : super(key: key);
@@ -43,10 +44,10 @@ class _EntryScreenState extends State<EntryScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: Colors.deepPurple,
+    return Scaffold(
+      // backgroundColor: Colors.deepPurple,
       body: Center(
-        child: Text('Configure'),
+        child: _amplifyConfigured ? LoginScreen() : CircularProgressIndicator(),
       ),
     );
   }
